@@ -13,6 +13,8 @@ import Registration from './components/Registration/Registration.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
 import PrivateRoute from './components/Private/PrivateRoute.jsx';
 import Error from './Error.jsx';
+import Apples from './components/BrandProducts/Apple/Apples.jsx';
+import Intel from './components/BrandProducts/Intel/Intel.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
       {
         path: "/registration",
         element: <Registration></Registration>
+      },
+      {
+        path: "/products/apple",
+        element: <Apples></Apples>
+      },
+      {
+        path: "/products/intel",
+        element: <Intel></Intel>
       },
     ]
   },
