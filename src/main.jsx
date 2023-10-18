@@ -10,26 +10,30 @@ import Home from './components/Home/Home.jsx';
 import Login from './components/Login/Login.jsx';
 import AddtoCart from './components/AddtoCart/AddtoCart.jsx';
 import Registration from './components/Registration/Registration.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
+import PrivateRoute from './components/Private/PrivateRoute.jsx';
+import Error from './Error.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    children:[
+    errorElement: <Error></Error>,
+    children: [
       {
-        path:"/",
-        element:<Home></Home>
+        path: "/",
+        element: <Home></Home>
       },
       {
-        path:"/addtocart",
-        element: <AddtoCart></AddtoCart>
+        path: "/addtocart",
+        element: <PrivateRoute><AddtoCart></AddtoCart></PrivateRoute>
       },
       {
-        path:"/login",
-        element:<Login></Login>
+        path: "/login",
+        element: <Login></Login>
       },
       {
-        path:"/registration",
+        path: "/registration",
         element: <Registration></Registration>
       },
     ]
@@ -38,6 +42,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

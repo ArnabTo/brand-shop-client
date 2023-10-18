@@ -1,7 +1,34 @@
-import { Link, Navigate } from "react-router-dom";
+
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
+
+    const { signInUser } = useContext(AuthContext);
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
+
+        signInUser(email, password)
+            .then(res => {
+                console.log(res.user)
+                toast.success('Successfuly Loged In!')
+            })
+            .catch(error => {
+                toast.error(error.message)
+
+            })
+
+    }
     return (
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-lg">
@@ -15,10 +42,10 @@ const Login = () => {
                 </p>
 
                 <form
-                    action=""
+                    onSubmit={handleLogin}
                     className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
                 >
-                    <p className="text-center text-lg font-medium">Sign in to your account</p>
+                    <p className="text-center text-lg font-medium">Log in in to your account</p>
 
                     <div>
                         <label htmlFor="email" className="sr-only">Email</label>
@@ -26,6 +53,7 @@ const Login = () => {
                         <div className="relative">
                             <input
                                 type="email"
+                                name="email"
                                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                                 placeholder="Enter email"
                             />
@@ -55,6 +83,7 @@ const Login = () => {
                         <div className="relative">
                             <input
                                 type="password"
+                                name="password"
                                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                                 placeholder="Enter password"
                             />
@@ -88,7 +117,7 @@ const Login = () => {
                         type="submit"
                         className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
                     >
-                        Sign in
+                        Log In
                     </button>
 
                     <p className="text-center text-sm text-gray-500">
@@ -97,6 +126,19 @@ const Login = () => {
                     </p>
                 </form>
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={1000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
+            <ToastContainer />
         </div>
     );
 };

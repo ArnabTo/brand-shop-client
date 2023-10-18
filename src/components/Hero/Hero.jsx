@@ -6,7 +6,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import '../../index.css';
 const Hero = () => {
     return (
-        <div>
+        <div className='-z-50'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
