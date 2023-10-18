@@ -17,6 +17,8 @@ import Apples from './components/BrandProducts/Apple/Apples.jsx';
 import Intel from './components/BrandProducts/Intel/Intel.jsx';
 import Samsung from './components/BrandProducts/Samsung/Samsung.jsx';
 import Ryzen from './components/BrandProducts/Ryzen/Ryzen.jsx';
+import Nvidia from './components/BrandProducts/Nvidia/Nvidia.jsx';
+import Sony from './components/BrandProducts/Sony/Sony.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,19 +44,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/products/apple",
-        element: <Apples></Apples>
+        element: <PrivateRoute><Apples></Apples></PrivateRoute>
       },
       {
         path: "/products/intel",
-        element: <Intel></Intel>
+        element: <PrivateRoute><Intel></Intel></PrivateRoute>
       },
       {
         path: "/products/samsung",
-        element: <Samsung></Samsung>
+        element: <PrivateRoute><Samsung></Samsung></PrivateRoute>
       },
       {
         path: "/products/ryzen",
-        element: <Ryzen></Ryzen>
+        element: <PrivateRoute><Ryzen></Ryzen></PrivateRoute>
+      },
+      {
+        path: "/products/nvidia",
+        element: <PrivateRoute><Nvidia></Nvidia></PrivateRoute>
+      },
+      {
+        path: "/products/sony",
+        element: <PrivateRoute><Sony></Sony></PrivateRoute>
       },
     ]
   },

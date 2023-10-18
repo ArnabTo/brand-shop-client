@@ -9,7 +9,7 @@ const Brand = ({brand}) => {
             <div className="card-body">
                 <h2 className="card-title uppercase brand_name">{brand_name}</h2>
                 <div className="card-actions justify-start">
-                    <NavLink to={`/products/${brand_name}`}><button className="btn btn-primary">Learn now!</button></NavLink>
+                    <NavLink to={`/products/${brand_name}`}><button className="btn btn-primary">Browse Products....</button></NavLink>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ const Nvidia = () => {
     const [nvidias, setNvidias] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5003/products/ryzen')
+        fetch('http://localhost:5003/products/nvidia')
         .then(res => res.json())
         .then(data => setNvidias(data))
     },[])
