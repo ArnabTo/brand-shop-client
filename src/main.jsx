@@ -15,6 +15,8 @@ import PrivateRoute from './components/Private/PrivateRoute.jsx';
 import Error from './Error.jsx';
 import Apples from './components/BrandProducts/Apple/Apples.jsx';
 import Intel from './components/BrandProducts/Intel/Intel.jsx';
+import Samsung from './components/BrandProducts/Samsung/Samsung.jsx';
+import Ryzen from './components/BrandProducts/Ryzen/Ryzen.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
       {
         path: "/products/intel",
         element: <Intel></Intel>
+      },
+      {
+        path: "/products/samsung",
+        element: <Samsung></Samsung>
+      },
+      {
+        path: "/products/ryzen",
+        element: <Ryzen></Ryzen>
       },
     ]
   },
