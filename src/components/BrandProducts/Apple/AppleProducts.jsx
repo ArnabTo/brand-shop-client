@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 const AppleProducts = ({ appleProducts }) => {
-    console.log(appleProducts)
+
     const { _id, name, brand_name, type, price, rate, brand_image } = appleProducts;
+    
     return (
         <div className="card h-[26rem]  bg-base-100 shadow-xl">
             <figure><img src={brand_image} className=" object-contain my-4" alt="Products" /></figure>

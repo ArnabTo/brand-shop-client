@@ -26,11 +26,10 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
 
         signInUser(email, password)
             .then(res => {
-                console.log(res.user)
+                const user = res.user;
                 toast.success('Successfuly Loged In!')
             })
             .catch(error => {

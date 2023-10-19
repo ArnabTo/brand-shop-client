@@ -17,10 +17,7 @@ const Registration = () => {
         const email = form.email.value;
         const photoURL = form.photoURL.value;
         const password = form.password.value;
-        // console.log(password)
-        // const user = {name, email, photoURL, password}
-
-
+        
         if (password.length < 6) {
             toast.error("Password length must have to more than 6");
             return;
@@ -34,12 +31,12 @@ const Registration = () => {
 
         createUser(email, password)
             .then(res => {
+                const user = res.user;
                 toast.success("Congratulation! Your succesfully registered");
-                console.log(res.user)
                 updateUser(displayName, photoURL)
             })
             .catch(error => {
-                console.log(error)
+                toast.error(error.message)
             })
 
     }

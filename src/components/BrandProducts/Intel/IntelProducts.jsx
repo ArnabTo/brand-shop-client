@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const IntelProducts = ({ intelProducts }) => {
-    console.log(intelProducts)
     const { _id, name, brand_name, type, price, rate, brand_image } = intelProducts;
     return (
         <div className="card h-[26rem]  bg-base-100 shadow-xl">
