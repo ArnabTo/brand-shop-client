@@ -34,7 +34,7 @@ const Update = () => {
     }
     return (
         <div className="max-w-6xl mx-auto my-8">
-            <h1>Update Information of The Product</h1>
+            <h1 className="text-center text-3xl font-extrabold my-8 uppercase">Update Information of The Product</h1>
             <form onSubmit={handleAddProducts} className="mx-4 border-[1px] border-black p-8 rounded-md">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center">
                     <div className="form-control">

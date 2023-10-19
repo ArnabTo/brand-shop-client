@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 const SamaungProducts = ({samProducts}) => {
     const { _id, name, brand_name, type, price, rate, brand_image } = samProducts;
     return (
@@ -15,8 +15,8 @@ const SamaungProducts = ({samProducts}) => {
                 <div className="badge badge-outline">{brand_name}</div>
             </div>
             <div className="card-actions justify-start gap-4 mt-2">
-                <button className="btn btn-primary">Update</button>
-                <button className="btn btn-primary">Add to Cart</button>
+            <Link to={`/products/update/${_id}`}> <button className="btn btn-primary">Update</button></Link>
+            <Link> <button className="btn btn-primary">Add to Cart</button></Link>
             </div>
         </div>
     </div>

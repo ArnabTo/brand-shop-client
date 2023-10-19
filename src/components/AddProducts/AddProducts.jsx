@@ -14,8 +14,7 @@ const AddProducts = () => {
          const rate = form.ratting.value;
 
          const newProduct = {name, brand_image, brand_name, type, price, details, rate};
-         console.log(newProduct)
-
+     
          fetch('http://localhost:5003/products',{
             method:"POST",
             headers:{
@@ -24,7 +23,6 @@ const AddProducts = () => {
          })
          .then(res => res.json())
          .then(data => {
-            console.log(data)
             if(data.acknowledged == true){
                 toast.success('Product Successfuly added to Database')
             }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const NvidiaProducts = ({nvidiaProducts}) => {
 
     const { _id, name, brand_name, type, price, rate, brand_image } = nvidiaProducts;
@@ -16,8 +17,8 @@ const NvidiaProducts = ({nvidiaProducts}) => {
                     <div className="badge badge-outline">{brand_name}</div>
                 </div>
                 <div className="card-actions justify-start gap-4 mt-2">
-                    <button className="btn btn-primary">Update</button>
-                    <button className="btn btn-primary">Add to Cart</button>
+                <Link to={`/products/update/${_id}`}> <button className="btn btn-primary">Update</button></Link>
+                <Link> <button className="btn btn-primary">Add to Cart</button></Link>
                 </div>
             </div>
         </div>
