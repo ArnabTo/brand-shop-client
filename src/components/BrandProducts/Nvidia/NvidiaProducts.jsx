@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-const NvidiaProducts = ({nvidiaProducts}) => {
+const NvidiaProducts = ({ nvidiaProducts }) => {
 
     const { _id, name, brand_name, type, price, rate, brand_image } = nvidiaProducts;
-    
+
     return (
         <div className="card h-[26rem]  bg-base-100 shadow-xl">
             <figure><img src={brand_image} className=" object-contain my-4" alt="Products" /></figure>
@@ -17,8 +17,8 @@ const NvidiaProducts = ({nvidiaProducts}) => {
                     <div className="badge badge-outline">{brand_name}</div>
                 </div>
                 <div className="card-actions justify-start gap-4 mt-2">
-                <Link to={`/products/update/${_id}`}> <button className="btn btn-primary">Update</button></Link>
-                <Link> <button className="btn btn-primary">Add to Cart</button></Link>
+                    <Link to={`/products/update/${_id}`}> <button className="btn btn-primary">Update</button></Link>
+                    <Link to={`/products/details/${_id}`}><button className="btn btn-primary">Details</button></Link>
                 </div>
             </div>
         </div>

@@ -19,8 +19,9 @@ import Ryzen from './components/BrandProducts/Ryzen/Ryzen.jsx';
 import Nvidia from './components/BrandProducts/Nvidia/Nvidia.jsx';
 import Sony from './components/BrandProducts/Sony/Sony.jsx';
 import AddProducts from './components/AddProducts/AddProducts.jsx';
-import Cart from './components/Cart/Cart.jsx';
 import Update from './components/Update/Update.jsx';
+import MyCart from './components/Cart/MyCart.jsx';
+import ProductDetail from './components/BrandProducts/ProductDetails.jsx/ProductDetail.jsx';
 
 const router = createBrowserRouter([
   {
@@ -70,8 +71,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/products/update/:id",
-        element: <Update></Update>,
+        element: <PrivateRoute><Update></Update></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5003/products/${params.id}`),
+      },
+      {
+        path: "/mycart",
+        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
+      },
+      {
+        path: "/products/details/:id",
+        element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
+        loader:({params})=> fetch(`http://localhost:5003/products/${params.id}`)
       },
     ]
   },

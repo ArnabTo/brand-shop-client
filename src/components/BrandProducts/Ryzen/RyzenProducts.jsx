@@ -15,8 +15,8 @@ const RyzenProducts = ({ ryzenProducts }) => {
                     <div className="badge badge-outline">{brand_name}</div>
                 </div>
                 <div className="card-actions justify-start gap-4 mt-2">
-                <Link to={`/products/update/${_id}`}> <button className="btn btn-primary">Update</button></Link>
-                <Link> <button className="btn btn-primary">Add to Cart</button></Link>
+                    <Link to={`/products/update/${_id}`}> <button className="btn btn-primary">Update</button></Link>
+                    <Link to={`/products/details/${_id}`}><button className="btn btn-primary">Details</button></Link>
                 </div>
             </div>
         </div>
