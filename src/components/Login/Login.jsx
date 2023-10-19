@@ -13,10 +13,11 @@ const Login = () => {
     const handleGoogleSignin =() =>{
         signInwithGoogle()
         .then(res => {
-            console.log(res.user)
+            const user = res.user;
+            toast.success('Successfuly Loged In!')
         })
         .catch(error =>{
-            console.log(error)
+            toast.error(error.message)
         })
     }
     const handleLogin = (event) => {
@@ -34,7 +35,6 @@ const Login = () => {
             })
             .catch(error => {
                 toast.error(error.message)
-
             })
 
     }

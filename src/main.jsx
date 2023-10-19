@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home.jsx';
 import Login from './components/Login/Login.jsx';
-import AddtoCart from './components/AddtoCart/AddtoCart.jsx';
 import Registration from './components/Registration/Registration.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
 import PrivateRoute from './components/Private/PrivateRoute.jsx';
@@ -19,6 +18,9 @@ import Samsung from './components/BrandProducts/Samsung/Samsung.jsx';
 import Ryzen from './components/BrandProducts/Ryzen/Ryzen.jsx';
 import Nvidia from './components/BrandProducts/Nvidia/Nvidia.jsx';
 import Sony from './components/BrandProducts/Sony/Sony.jsx';
+import AddProducts from './components/AddProducts/AddProducts.jsx';
+import Cart from './components/Cart/Cart.jsx';
+import Update from './components/Update/Update.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,8 +33,8 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: "/addtocart",
-        element: <PrivateRoute><AddtoCart></AddtoCart></PrivateRoute>
+        path: "/addproducts",
+        element: <PrivateRoute><AddProducts></AddProducts></PrivateRoute>
       },
       {
         path: "/login",
@@ -44,27 +46,32 @@ const router = createBrowserRouter([
       },
       {
         path: "/products/apple",
-        element: <PrivateRoute><Apples></Apples></PrivateRoute>
+        element:<Apples></Apples>
       },
       {
         path: "/products/intel",
-        element: <PrivateRoute><Intel></Intel></PrivateRoute>
+        element:<Intel></Intel>
       },
       {
         path: "/products/samsung",
-        element: <PrivateRoute><Samsung></Samsung></PrivateRoute>
+        element:<Samsung></Samsung>
       },
       {
         path: "/products/ryzen",
-        element: <PrivateRoute><Ryzen></Ryzen></PrivateRoute>
+        element:<Ryzen></Ryzen>
       },
       {
         path: "/products/nvidia",
-        element: <PrivateRoute><Nvidia></Nvidia></PrivateRoute>
+        element:<Nvidia></Nvidia>
       },
       {
         path: "/products/sony",
-        element: <PrivateRoute><Sony></Sony></PrivateRoute>
+        element:<Sony></Sony>
+      },
+      {
+        path: "/products/update/:id",
+        element: <Update></Update>,
+        loader: ({params}) => fetch(`http://localhost:5003/products/${params.id}`),
       },
     ]
   },
