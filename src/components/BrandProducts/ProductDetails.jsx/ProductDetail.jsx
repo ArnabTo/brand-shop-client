@@ -5,7 +5,7 @@ const ProductDetail = () => {
     const productData = useLoaderData();
 
     const handleAddtoCart = (prodcut) => {
-        fetch('http://localhost:5003/cartproducts', {
+        fetch('https://brand-shop-server-zeta.vercel.app/cartproducts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

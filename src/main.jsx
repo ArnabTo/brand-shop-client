@@ -72,7 +72,7 @@ const router = createBrowserRouter([
       {
         path: "/products/update/:id",
         element: <PrivateRoute><Update></Update></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5003/products/${params.id}`),
+        loader: ({params}) => fetch(`https://brand-shop-server-zeta.vercel.app/products/${params.id}`),
       },
       {
         path: "/mycart",
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
       {
         path: "/products/details/:id",
         element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5003/products/${params.id}`)
+        loader:({params})=> fetch(`https://brand-shop-server-zeta.vercel.app/products/${params.id}`)
       },
     ]
   },

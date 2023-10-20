@@ -10,7 +10,7 @@ import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 const Apples = () => {
     const [apples, setApples] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5003/products/apple')
+        fetch('https://brand-shop-server-zeta.vercel.app/products/apple')
             .then(res => res.json())
             .then(data => setApples(data))
     }, [])

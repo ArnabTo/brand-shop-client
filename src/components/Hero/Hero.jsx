@@ -5,6 +5,7 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import '../../index.css';
 const Hero = () => {
+  
     return (
         <div className='-z-50'>
             <Swiper
@@ -26,8 +27,8 @@ const Hero = () => {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                                <h1 className="mb-5 text-5xl font-bold">TechTreasures: Discover the Future of Gadgets</h1>
+                                <p className="mb-5">Unlock tomorrow&aposs tech wonders at TechTreasures, where innovation meets discovery. Explore the future of gadgets today.</p>
                                 <button className="btn btn-primary">Get Started</button>
                             </div>
                         </div>
@@ -38,8 +39,9 @@ const Hero = () => {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">Hello!</h1>
-                                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                                <h1 className="mb-5 text-5xl font-bold">Elevate Your Lifestyle with Cutting-Edge Tech</h1>
+                                <p className="mb-5">Elevate Your Lifestyle with Cutting-Edge Tech
+                                Enhance your life with top-tier tech – audio gear, wearables, and more. Trust us for quality and innovation that elevates convenience, entertainment, and productivity.</p>
                                 <button className="btn btn-primary">Get Started</button>
                             </div>
                         </div>

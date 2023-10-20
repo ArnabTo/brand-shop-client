@@ -12,7 +12,7 @@ const Samsung = () => {
   const [samsungs, setSamsungs] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5003/products/samsung')
+    fetch('https://brand-shop-server-zeta.vercel.app/products/samsung')
       .then(res => res.json())
       .then(data => setSamsungs(data))
   }, [])

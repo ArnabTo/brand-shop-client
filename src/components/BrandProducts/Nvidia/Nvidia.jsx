@@ -10,7 +10,7 @@ const Nvidia = () => {
     const [nvidias, setNvidias] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5003/products/nvidia')
+        fetch('https://brand-shop-server-zeta.vercel.app/products/nvidia')
             .then(res => res.json())
             .then(data => setNvidias(data))
     }, [])

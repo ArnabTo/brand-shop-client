@@ -11,7 +11,7 @@ const Ryzen = () => {
     const [ryzens, setRyzens] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5003/products/ryzen')
+        fetch('https://brand-shop-server-zeta.vercel.app/products/ryzen')
             .then(res => res.json())
             .then(data => setRyzens(data))
     }, [])

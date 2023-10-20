@@ -7,7 +7,7 @@ import Brand from "./Brand";
 const BrandBox = () => {
    const [brands, setBrands] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5003/storedItem')
+        fetch('https://brand-shop-server-zeta.vercel.app/storedItem')
         .then(res => res.json())
         .then(data => setBrands(data))
     },[])

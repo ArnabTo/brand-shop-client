@@ -11,7 +11,7 @@ const Intel = () => {
     const [intels, setIntels] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5003/products/intel')
+        fetch('https://brand-shop-server-zeta.vercel.app/products/intel')
             .then(res => res.json())
             .then(data => setIntels(data))
     }, [])

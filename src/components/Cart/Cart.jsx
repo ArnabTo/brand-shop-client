@@ -6,7 +6,7 @@ const Cart = ({ cart }) => {
  
     const handleRemove =_id=>{
         console.log(_id)
-        fetch(`http://localhost:5003/cartproducts/${_id}`,{
+        fetch(`https://brand-shop-server-zeta.vercel.app/cartproducts/${_id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())

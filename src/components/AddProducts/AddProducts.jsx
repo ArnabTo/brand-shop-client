@@ -15,7 +15,7 @@ const AddProducts = () => {
 
          const newProduct = {name, brand_image, brand_name, type, price, details, rate};
      
-         fetch('http://localhost:5003/products',{
+         fetch('https://brand-shop-server-zeta.vercel.app/products',{
             method:"POST",
             headers:{
                 'content-type' : 'application/json'

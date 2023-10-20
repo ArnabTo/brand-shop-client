@@ -5,7 +5,7 @@ import Cart from "./Cart";
 const MyCart = () => {
     const [cartProduct, setCartProduct] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5003/cartproducts')
+        fetch('https://brand-shop-server-zeta.vercel.app/cartproducts')
             .then(res => res.json())
             .then(data => setCartProduct(data))
     }, [])
